@@ -26,7 +26,8 @@ def index():
             db.session.commit()
 
         cities = Cities.query.all()
-        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=0e16c99438ea4f44c773897cd810dbf4'
+        your_api_key = ""
+        url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=your_api_key'
 
         for city in cities:
             response = requests.get(url.format(city.name)).json()
